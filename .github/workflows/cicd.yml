@@ -2,18 +2,18 @@ name: CI / CD Pipeline
 
 on:
     push:
-  branches:
-    - main
+        branches: [main, developer]
 
 jobs:
-    build - and - test:
-  runs- on: ubuntu - latest
-steps:
-- name: Checkout code
-uses: actions / checkout@v2
+    job_test:
+        name: Executando o job
+        runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+        uses: actions/checkout@v2
 
-- name: Set up Node.js
-uses: actions / setup - node@v2
+    - name: Executando um comando simples
+        run: echo "Olá, esse é o nosso primeiro job no Github action"
 with:
 node - version: '14'
 
